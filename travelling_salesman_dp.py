@@ -2,11 +2,12 @@
 The first line indicates the number of cities.
 Each city is a point in the plane, and each subsequent line indicates the x- and y-coordinates of a single city.
 '''
-import itertools
+from itertools import product, chain, combinations
 import math
 import matplotlib.pyplot as plt
 import numpy as np
 import sys
+import tsp
 
 # read TSP input file
 def read_tsp_file(filename):
@@ -28,7 +29,7 @@ def plot_cities_with_distance(coordinates):
 	for point in coordinates:
 		ax.scatter(point[0],point[1])
 
-	for a, b in itertools.product(coordinates, coordinates):
+	for a, b in product(coordinates, coordinates):
 		x = np.linspace(a[0], b[0], 100)
 		y = np.linspace(a[1], b[1], 100)
 		# print(x, y)
@@ -40,7 +41,10 @@ def plot_cities_with_distance(coordinates):
 			ax.text(m[0], m[1], s)
 	plt.show()
 
+def tsproblem(coordinates):
+	return tsp.tsp(coordinates)
+
 if __name__ == '__main__':
 	filename = sys.argv[1]
 	coordinates = read_tsp_file(filename)
-	print(plot_cities_with_distance(coordinates))
+	print(tsproblem(coordinates))
