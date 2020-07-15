@@ -1,7 +1,17 @@
+amply==0.1.2
 cycler==0.10.0
+decorator==4.4.2
+docutils==0.16
 kiwisolver==1.2.0
 matplotlib==3.2.2
+more-itertools==8.4.0
+networkx==2.4
 numpy==1.19.0
+pandas==1.0.5
+PuLP==2.2
 pyparsing==2.4.7
 python-dateutil==2.8.1
+pytz==2020.1
 six==1.15.0
+tsp==0.0.7
+utils==1.0.1

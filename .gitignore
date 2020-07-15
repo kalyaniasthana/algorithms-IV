@@ -1,3 +1,4 @@
 *.pyc
 /venv/*
 test.py
+2sat.py
